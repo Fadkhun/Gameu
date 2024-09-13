@@ -1,21 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Game</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Character Selection Game</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="game-container">
-        <img id="pion1" src="pion1.png" alt="Pion1">
+
+  <div id="gameArea">
+    <div id="p1" class="character"></div>
+    <div id="p2" class="character"></div>
+    <div id="instructions">
+      <p>Gunakan tombol di bawah untuk menggerakkan karakter.</p>
+      <p>Pilih karakter yang ingin digerakkan di kanan atas.</p>
     </div>
-    <div class="controls">
-        <button id="left">⬅️</button>
-        <button id="up">⬆️</button>
-        <button id="down">⬇️</button>
-        <button id="right">➡️</button>
-    </div>
-    <script src="script.js"></script>
+  </div>
+
+  <div id="selection">
+    <div id="selectP1" class="select-btn" style="background-image: url('p1.png'); background-size: cover;"></div>
+    <div id="selectP2" class="select-btn" style="background-image: url('p2.png'); background-size: cover;"></div>
+  </div>
+
+  <div id="controls">
+    <div class="control-btn" id="leftBtn">←</div>
+    <div class="control-btn" id="upBtn">↑</div>
+    <div class="control-btn" id="downBtn">↓</div>
+    <div class="control-btn" id="rightBtn">→</div>
+  </div>
+
+  <script src="script.js"></script>
+
 </body>
 </html>
