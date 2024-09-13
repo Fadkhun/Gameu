@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.game-container {
+    width: 100vw;
+    height: 70vh;
+    position: relative;
+    background-color: lightblue;
+    overflow: hidden;
+}
+
+#pion1 {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.controls {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+    background-color: #ddd;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #aaa;
+}
