@@ -1,53 +1,89 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
 }
 
-.game-container {
-    width: 100vw;
-    height: 70vh;
-    position: relative;
-    background-color: lightblue;
-    overflow: hidden;
+#gameArea {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: #b8e0f4;
 }
 
-#pion1 {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.character {
+  position: absolute;
+  width: 53px;  /* Ukuran 2/3 dari 80px */
+  height: 53px;
 }
 
-.controls {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
+#p1 {
+  top: 100px;
+  left: 100px;
+  background: url('p1.png') no-repeat center;
+  background-size: contain;
 }
 
-button {
-    width: 50px;
-    height: 50px;
-    margin: 5px;
-    font-size: 20px;
-    cursor: pointer;
-    border-radius: 10px;
-    border: none;
-    background-color: #ddd;
-    transition: background-color 0.3s;
+#p2 {
+  top: 200px;
+  left: 200px;
+  background: url('p2.png') no-repeat center;
+  background-size: contain;
 }
 
-button:hover {
-    background-color: #aaa;
+#controls {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 7px;  /* Jarak antar tombol kontrol dikurangi */
+}
+
+.control-btn {
+  display: inline-block;
+  width: 40px;  /* Ukuran 2/3 dari 60px */
+  height: 40px;
+  font-size: 20px;  /* Ukuran teks juga dikurangi */
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid #000;
+  background-color: #fff;
+}
+
+#selection {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 7px;
+}
+
+.select-btn {
+  width: 40px;  /* Ukuran 2/3 dari 60px */
+  height: 40px;
+  background-color: #ddd;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.selected {
+  border-color: red;
+}
+
+#instructions {
+  position: fixed;
+  bottom: 70px; /* Jarak dari bawah */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #000;
+  font-size: 14px;
+  text-align: center;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
