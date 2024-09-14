@@ -5,6 +5,21 @@ let characters = {
   'p2': document.getElementById('p2')
 };
 
+let characterImages = {
+  'p1': {
+    up: 'p1atas.png',
+    down: 'p1bawah.png',
+    left: 'p1kiri.png',
+    right: 'p1kanan.png'
+  },
+  'p2': {
+    up: 'p2atas.png',
+    down: 'p2bawah.png',
+    left: 'p2kiri.png',
+    right: 'p2kanan.png'
+  }
+};
+
 // Fungsi untuk memilih karakter
 document.getElementById('selectP1').addEventListener('click', function() {
   selectCharacter('p1');
@@ -37,19 +52,24 @@ function moveCharacter(event) {
   let rect = selectedCharacter.getBoundingClientRect();
   let xChange = 0;
   let yChange = 0;
+  let direction = '';
 
   switch (event.target.id) {
     case 'upBtn':
       yChange = -20;  // Pergerakan 2x lebih cepat
+      direction = 'up';
       break;
     case 'downBtn':
       yChange = 20;   // Pergerakan 2x lebih cepat
+      direction = 'down';
       break;
     case 'leftBtn':
       xChange = -20;  // Pergerakan 2x lebih cepat
+      direction = 'left';
       break;
     case 'rightBtn':
       xChange = 20;   // Pergerakan 2x lebih cepat
+      direction = 'right';
       break;
   }
 
@@ -64,6 +84,10 @@ function moveCharacter(event) {
 
   selectedCharacter.style.left = newX + 'px';
   selectedCharacter.style.top = newY + 'px';
+
+  // Ganti gambar karakter berdasarkan arah gerakan
+  let charId = selectedCharacter.id;
+  selectedCharacter.style.backgroundImage = `url('${characterImages[charId][direction]}')`;
 }
 
 // Set karakter default yang dipilih
